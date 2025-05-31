@@ -1,0 +1,515 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto';
+    color: white;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../media/fonts/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #181818;
+}
+
+/* Header Styles */
+header {
+    border-bottom: 1px solid white;
+}
+
+.header-wrapper {
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+nav a {
+    display: flex;
+}
+
+nav a,
+nav p {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.header-actions {
+    display: flex;
+    margin-left: auto;
+    gap: 16px;
+    align-items: center;
+}
+
+.btn-primary {
+    padding: 7px 11px;
+    background-color: #24B47E;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.dropdown-btn {
+    display: flex;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background-color: #181818;
+    border: 1px solid #333;
+    padding: 10px;
+    min-width: 80px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dropdown-show {
+    display: block !important;
+}
+
+.dropdown-btn.active .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.dropdown-wrapper {
+    position: relative;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 115px;
+}
+
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    width: 566px;
+    gap: 16px;
+    width: 100%;
+}
+
+.info-label {
+    display: flex;
+    gap: 12px;
+    font-size: 18px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 36px;
+}
+
+.hero-text {
+    font-size: 14px;
+    font-weight: 400;
+    width: 467px;
+}
+
+/* Features Section */
+.features-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 96px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: start;
+    width: 280px;
+}
+
+.feature-img {
+    display: flex;
+    height: 32px;
+}
+
+.feature-name {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.feature-desc {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Dashboard Section */
+.dashboard-wrapper {
+    margin-top: 192px;
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.section-text {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: #2a2a2a;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    padding: 8px 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #333;
+}
+
+.dropdown-icon {
+    transition: transform 0.3s;
+}
+
+/* Accordion Styles */
+.accordion-panel {
+    border-bottom: 1px solid #333;
+}
+
+.accordion-header {
+    width: 100%;
+    text-align: left;
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.accordion-header p {
+    margin-right: 16px;
+    font-weight: 500;
+}
+
+.accordion-body {
+    display: none;
+    padding: 0 0 16px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.accordion-body.active {
+    display: block;
+}
+
+.accordion-icon {
+    transition: transform 0.3s;
+}
+
+.dashboard-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 187px;
+}
+
+.dashboard-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.tab-buttons {
+    display: flex;
+    font-size: 13px;
+    font-weight: 400;
+    gap: 12px;
+}
+
+.tab-btn {
+    padding: 7px 11px;
+    border-radius: 4px;
+    color: #666666;
+    margin-bottom: 16px;
+}
+
+.tab-btn.active {
+    background-color: #2A2A2A;
+    border-radius: 4px;
+    color: white;
+}
+
+.dashboard-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-title {
+    font-size: 18px;
+    line-height: 28px;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.content-desc {
+    font-size: 16px;
+    line-height: 24px;
+    color: #E0E0E0;
+    margin-bottom: 48px;
+}
+
+.content-card {
+    padding: 21px;
+    background-color: #1F1F1F;
+    border-radius: 4px;
+}
+
+.card-title {
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.card-desc {
+    color: #E0E0E0;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 13px;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+}
+
+.github-link {
+    font-size: 14px;
+    line-height: 20px;
+    color: #E0E0E0;
+    display: flex;
+    gap: 4px;
+    padding: 20px;
+}
+
+.card-img {
+    padding-left: 20px;
+}
+
+.divider {
+    width: 100%;
+    background: #2A2A2A;
+    margin-top: 20px;
+    height: 1px;
+}
+
+.content-item {
+    display: none;
+}
+
+.content-item.active {
+    display: block;
+}
+
+/* Integration Section */
+.integration-wrapper {
+    margin: 100px auto 200px;
+}
+
+.accordion-wrapper {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 300;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.accordion-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.doc-link {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: #24B47E;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+}
+
+/* Footer Styles */
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 50px 0;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 32px;
+}
+
+.footer-col {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.col-title {
+    color: #666666;
+    font-weight: 300;
+}
+
+.col-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 300;
+}
+
+.footer-link {
+    cursor: pointer;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.546);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    position: fixed;
+}
+
+.modal-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    top: 30%;
+    padding: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+.modal-container p {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal-container span {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+.modal-container input {
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+}
+
+.modal-container button {
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 5px;
+}

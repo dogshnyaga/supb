@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>supabase</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <div class="modal-overlay" id="sign_up" style="display: none;">
+        <div class="modal-container">
+            <p>Sign up</p>
+            <input type="text" placeholder="login">
+            <input type="text" placeholder="email">
+            <input type="text" placeholder="password">
+            <input type="text" placeholder="re_password">
+            <button>Sign up</button>
+            <span onclick="hideSignUpModal()">X</span>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="sign_in" style="display: none;">
+        <div class="modal-container">
+            <p>Sign in</p>
+            <input type="text" placeholder="login">
+            <input type="text" placeholder="password">
+            <button>Sign in</button>
+            <span onclick="hideSignInModal()">X</span>
+        </div>
+    </div>
+    <!-- header start -->
+    <header>
+        <div class="header-wrapper container">
+            <div class="logo-wrapper">
+                <img src="assets/media/img/logo.png" alt="logo">
+            </div>
+            <nav>
+                <div class="dropdown-wrapper">
+                    <button onclick="toggleDropdown(event, 'navDropdown1')" class="dropdown-btn">
+                        <p>Product</p>
+                        <img src="assets/media/img/arrow-down.svg" alt="arrow-down" class="dropdown-icon">
+                    </button>
+                    <div id="navDropdown1" class="dropdown-content">
+                        <a href="#">Product 1</a>
+                        <a href="#">Product 2</a>
+                        <a href="#">Product 3</a>
+                    </div>
+                </div>
+                <div class="dropdown-wrapper">
+                    <button onclick="toggleDropdown(event, 'navDropdown2')" class="dropdown-btn">
+                        <p>Developers</p>
+                        <img src="assets/media/img/arrow-down.svg" alt="arrow-down" class="dropdown-icon">
+                    </button>
+                    <div id="navDropdown2" class="dropdown-content">
+                        <a href="#">Developer Docs</a>
+                        <a href="#">API Reference</a>
+                        <a href="#">Tutorials</a>
+                    </div>
+                </div>
+                <a href="#">Beta</a>
+                <a href="#">Pricing</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" onclick="showSignUpModal()" class="btn-primary">Sign up</a>
+                <a href="#" onclick="showSignInModal()" class="btn-secondary">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section container">
+        <div class="hero-info">
+            <div class="info-label">
+                <img src="assets/media/img/storage.svg" alt="storage">
+                <p>Storage</p>
+            </div>
+            <h1 class="hero-title">Store and serve <br> any type of digital content</h1>
+            <div class="hero-text">
+                An open source Object store service with unlimited scalability, for any file type.
+            </div>
+            <div class="hero-text">
+                With custom policies and permissions that are familiar and easy to implement.
+            </div>
+            <a href="#" class="btn-primary">Start a project</a>
+        </div>
+        <div class="hero-visual">
+            <img src="assets/media/img/banner-img.png" alt="banner-img">
+        </div>
+    </section>
+
+    <section class="features-wrapper container">
+        <div class="feature-item">
+            <img src="assets/media/img/1.svg" class="feature-img" alt="1">
+            <h3 class="feature-name">Interoperable</h3>
+            <div class="feature-desc">
+                Integrates well with the rest of Supabase ecosystem, including Auth and Postgres.
+            </div>
+        </div>
+        <div class="feature-item">
+            <img src="assets/media/img/2.svg" class="feature-img" alt="1">
+            <h3 class="feature-name">Lightning fast</h3>
+            <div class="feature-desc">
+                Thin API server layer that leverages Postgres' permissions and performance.
+            </div>
+        </div>
+        <div class="feature-item">
+            <img src="assets/media/img/3.svg" class="feature-img" alt="1">
+            <h3 class="feature-name">Dependable</h3>
+            <div class="feature-desc">
+                Enterprise-level scalability and durability.
+            </div>
+        </div>
+    </section>
+
+    <section class="dashboard-wrapper container">
+        <div class="section-header">
+            <h2 class="section-title">Sleek dashboard for managing your media</h2>
+            <div class="section-subtitle">A complete Object Explorer so that any of your team can use.</div>
+            <div class="section-text">
+                Drag and drop uploading, moving objects, and multiple object selection. As easy
+                as working on your desktop.
+            </div>
+        </div>
+        <div class="dashboard-content">
+            <div class="dashboard-left">
+                <div class="tab-buttons">
+                    <div class="tab-btn active">File previews</div>
+                    <div class="tab-btn">Column view</div>
+                    <div class="tab-btn">List view</div>
+                    <div class="tab-btn">Multi select actions</div>
+                    <div class="tab-btn">Path navigator</div>
+                </div>
+                <img src="assets/media/img/section.png" alt="">
+            </div>
+            <div class="dashboard-right">
+                <div class="tab-content">
+                    <div class="content-item active">
+                        <p class="content-title">File previews</p>
+                        <p class="content-desc">Preview any media type, including video and audio.</p>
+                        <p class="content-title">Check out our example app</p>
+                        <div class="content-card">
+                            <div class="card-title">Profile management example</div>
+                            <div class="card-desc">Update a user account with public profile information, including
+                                uploading a profile image.</div>
+                            <div class="flex-row">
+                                <p>Created by:</p>
+                                <img src="assets/media/img/Rectangle.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="github-link">
+                            <p>nextjs-ts-user-management</p>
+                            <img src="assets/media/img/github.png" alt="">
+                        </div>
+                        <img class="card-img" src="assets/media/img/btn.svg" alt="">
+                        <div class="divider"></div>
+                    </div>
+                    <div class="content-item">
+                        <p class="content-title">Column view</p>
+                        <p class="content-desc">View information in columns, including video and audio.</p>
+                        <p class="content-title">Check out our example app</p>
+                        <div class="content-card">
+                            <div class="card-title">Profile management example</div>
+                            <div class="card-desc">Update a user account with public profile information, including
+                                uploading a profile image.</div>
+                            <div class="flex-row">
+                                <p>Created by:</p>
+                                <img src="assets/media/img/Rectangle.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="github-link">
+                            <p>nextjs-ts-user-management</p>
+                            <img src="assets/media/img/github.png" alt="">
+                        </div>
+                        <img class="card-img" src="assets/media/img/btn.svg" alt="">
+                        <div class="divider"></div>
+                    </div>
+                    <div class="content-item">
+                        <p class="content-title">List view</p>
+                        <p class="content-desc">Utilize list view for a compact display of items, providing convenient
+                        </p>
+                        <p class="content-title">Check out our example app</p>
+                        <div class="content-card">
+                            <div class="card-title">Profile management example</div>
+                            <div class="card-desc">Update a user account with public profile information, including
+                                uploading a profile image.</div>
+                            <div class="flex-row">
+                                <p>Created by:</p>
+                                <img src="assets/media/img/Rectangle.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="github-link">
+                            <p>nextjs-ts-user-management</p>
+                            <img src="assets/media/img/github.png" alt="">
+                        </div>
+                        <img class="card-img" src="assets/media/img/btn.svg" alt="">
+                        <div class="divider"></div>
+                    </div>
+                    <div class="content-item">
+                        <p class="content-title">Multi select actions</p>
+                        <p class="content-desc">Select multiple objects at once and perform bulk actions</p>
+                        <p class="content-title">Check out our example app</p>
+                        <div class="content-card">
+                            <div class="card-title">Profile management example</div>
+                            <div class="card-desc">Update a user account with public profile information, including
+                                uploading a profile image.</div>
+                            <div class="flex-row">
+                                <p>Created by:</p>
+                                <img src="assets/media/img/Rectangle.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="github-link">
+                            <p>nextjs-ts-user-management</p>
+                            <img src="assets/media/img/github.png" alt="">
+                        </div>
+                        <img class="card-img" src="assets/media/img/btn.svg" alt="">
+                        <div class="divider"></div>
+                    </div>
+                    <div class="content-item">
+                        <p class="content-title">Path navigator</p>
+                        <p class="content-desc">Manage your project's navigation using an intuitive path navigator</p>
+                        <p class="content-title">Check out our example app</p>
+                        <div class="content-card">
+                            <div class="card-title">Profile management example</div>
+                            <div class="card-desc">Update a user account with public profile information, including
+                                uploading a profile image.</div>
+                            <div class="flex-row">
+                                <p>Created by:</p>
+                                <img src="assets/media/img/Rectangle.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="github-link">
+                            <p>nextjs-ts-user-management</p>
+                            <img src="assets/media/img/github.png" alt="">
+                        </div>
+                        <img class="card-img" src="assets/media/img/btn.svg" alt="">
+                        <div class="divider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="integration-wrapper container">
+        <h2 class="section-title">Integrates natively<br> with Supabase Auth</h2>
+        <div class="accordion-wrapper">
+            <div class="accordion-panel">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <p>Using Postgres Row Level Security to create Object access rules.</p>
+                    <img src="assets/media/img/arrow.svg" alt="arrow" class="accordion-icon">
+                </button>
+                <div class="accordion-body">
+                    <p>Storage Authorization is built around Postgres so that you can use any combination of SQL,
+                        Postgres functions, and even your own metadata to write policies.</p>
+                    <a href="#" class="doc-link">Explore documentation</a>
+                </div>
+            </div>
+            <div class="accordion-panel">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <p>File access controls with custom policies</p>
+                    <img src="assets/media/img/arrow.svg" alt="arrow" class="accordion-icon">
+                </button>
+                <div class="accordion-body">
+                    <p>Create fine-grained access controls for your files using SQL policies that integrate directly
+                        with your authentication system.</p>
+                    <a href="#" class="doc-link">Explore documentation</a>
+                </div>
+            </div>
+            <div class="accordion-panel">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <p>Scalable storage infrastructure</p>
+                    <img src="assets/media/img/arrow.svg" alt="arrow" class="accordion-icon">
+                </button>
+                <div class="accordion-body">
+                    <p>Our storage solution scales automatically to handle any amount of data while maintaining high
+                        performance and reliability.</p>
+                    <a href="#" class="doc-link">Explore documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-wrapper container">
+        <div class="footer-logo">
+            <img src="assets/media/img/logo.png" alt="">
+        </div>
+        <div class="footer-nav">
+            <div class="footer-col">
+                <div class="col-title">Product</div>
+                <div class="col-links">
+                    <div class="footer-link">Database</div>
+                    <div class="footer-link">Authentication</div>
+                    <div class="footer-link">Storage</div>
+                    <div class="footer-link">Functions</div>
+                    <div class="footer-link">Pricing</div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="col-title">Resources</div>
+                <div class="col-links">
+                    <div class="footer-link">Documentation</div>
+                    <div class="footer-link">Guides</div>
+                    <div class="footer-link">Blog</div>
+                    <div class="footer-link">Community</div>
+                    <div class="footer-link">Support</div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="col-title">Company</div>
+                <div class="col-links">
+                    <div class="footer-link">About</div>
+                    <div class="footer-link">Careers</div>
+                    <div class="footer-link">Contact</div>
+                    <div class="footer-link">Press</div>
+                    <div class="footer-link">Legal</div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="col-title">Social</div>
+                <div class="col-links">
+                    <div class="footer-link">Twitter</div>
+                    <div class="footer-link">GitHub</div>
+                    <div class="footer-link">Discord</div>
+                    <div class="footer-link">LinkedIn</div>
+                    <div class="footer-link">YouTube</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
