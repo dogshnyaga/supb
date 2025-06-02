@@ -141,6 +141,39 @@ nav p {
     width: 467px;
 }
 
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    margin-top: 150px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-item {
+    min-width: 100%;
+    position: relative;
+    height: 60px;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.slider-caption {
+    color: black;
+}
+
+
 /* Features Section */
 .features-wrapper {
     display: flex;

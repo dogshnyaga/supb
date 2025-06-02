@@ -16,14 +16,13 @@ function toggleDropdown(event, dropdownId) {
   button.classList.toggle("active");
 }
 
-
 function toggleAccordion(button) {
   const panel = button.parentElement;
   const body = button.nextElementSibling;
 
   button.classList.toggle("active");
   body.classList.toggle("active");
-  
+
   const allPanels = document.querySelectorAll(".accordion-panel");
   allPanels.forEach((accordionPanel) => {
     if (accordionPanel !== panel) {
@@ -58,7 +57,6 @@ tabButtons.forEach((button, index) => {
   };
 });
 
-
 let signInModal = document.getElementById("sign_in");
 let signUpModal = document.getElementById("sign_up");
 
@@ -77,3 +75,26 @@ function showSignUpModal() {
 function hideSignUpModal() {
   signUpModal.style.display = "none";
 }
+
+const sliderTrack = document.querySelector(".slider-track");
+const sliderItems = document.querySelectorAll(".slider-item");
+const prevBtn = document.querySelector(".slider-prev");
+const nextBtn = document.querySelector(".slider-next");
+const dots = document.querySelectorAll(".dot");
+
+let currentIndex = 0;
+const itemsCount = sliderItems.length;
+
+function updateSlider() {
+  sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % itemsCount;
+  updateSlider();
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + itemsCount) % itemsCount;
+  updateSlider();
+});
